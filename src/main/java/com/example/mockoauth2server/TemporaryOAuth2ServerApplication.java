@@ -1,4 +1,4 @@
-package com.example.temporaryoauth2server;
+package com.example.mockoauth2server;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,8 +1,8 @@
-package com.example.temporaryoauth2server.service;
+package com.example.mockoauth2server.service;
 
-import com.example.temporaryoauth2server.config.CodeManager;
-import com.example.temporaryoauth2server.config.SecretValue;
-import com.example.temporaryoauth2server.service.dto.TokenResponse;
+import com.example.mockoauth2server.config.CodeManager;
+import com.example.mockoauth2server.config.SecretValue;
+import com.example.mockoauth2server.service.dto.TokenResponse;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;

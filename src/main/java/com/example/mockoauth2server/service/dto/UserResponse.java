@@ -1,4 +1,4 @@
-package com.example.temporaryoauth2server.service.dto;
+package com.example.mockoauth2server.service.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

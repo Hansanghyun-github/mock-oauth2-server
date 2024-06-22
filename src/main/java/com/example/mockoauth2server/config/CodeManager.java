@@ -1,4 +1,4 @@
-package com.example.temporaryoauth2server.config;
+package com.example.mockoauth2server.config;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

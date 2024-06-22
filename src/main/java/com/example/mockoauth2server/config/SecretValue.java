@@ -1,4 +1,4 @@
-package com.example.temporaryoauth2server.config;
+package com.example.mockoauth2server.config;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;

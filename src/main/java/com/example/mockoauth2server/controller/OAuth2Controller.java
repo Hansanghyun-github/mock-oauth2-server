@@ -1,17 +1,14 @@
-package com.example.temporaryoauth2server.controller;
+package com.example.mockoauth2server.controller;
 
-import com.example.temporaryoauth2server.service.OAuth2Service;
-import com.example.temporaryoauth2server.service.dto.TokenResponse;
-import com.example.temporaryoauth2server.service.dto.UserResponse;
-import jakarta.servlet.http.HttpServletRequest;
+import com.example.mockoauth2server.service.OAuth2Service;
+import com.example.mockoauth2server.service.dto.TokenResponse;
+import com.example.mockoauth2server.service.dto.UserResponse;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.util.Map;
 
 @RestController
 @Slf4j
