@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class TemporaryOAuth2ServerApplication {
+public class MockOAuth2ServerApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(TemporaryOAuth2ServerApplication.class, args);
+        SpringApplication.run(MockOAuth2ServerApplication.class, args);
     }
 
 }
