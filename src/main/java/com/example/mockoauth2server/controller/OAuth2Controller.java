@@ -24,9 +24,10 @@ public class OAuth2Controller {
             @RequestParam(value = "scope") @NotBlank String scope,
             @RequestParam(value = "redirect_uri") @NotBlank String redirect_uri,
             @RequestParam(value = "state") @NotBlank String state,
+            @RequestParam(value = "code") @NotBlank String code,
             HttpServletResponse response
     ) throws IOException {
-        String authorizeCode = oAuth2Service.authorize(response_type, client_id, scope);
+        String authorizeCode = oAuth2Service.authorize(response_type, client_id, scope, code);
         log.info("authorizeCode: " + authorizeCode);
         response.sendRedirect(redirect_uri + "?code=" + authorizeCode + "&state=" + state);
     }
@@ -51,6 +52,6 @@ public class OAuth2Controller {
         if(!authorization.equals("access_token"))
             throw new IllegalArgumentException("Invalid access_token");
 
-        return new UserResponse("mock@email", "fsdf564wq89fDSF", "sub");
+        return oAuth2Service.getUserInfo(authorization);
     }
 }

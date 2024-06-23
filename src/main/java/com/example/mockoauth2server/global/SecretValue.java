@@ -13,4 +13,7 @@ public class SecretValue {
 
     @Value("${scope}")
     public String scope;
+
+    @Value("${code}")
+    public String code;
 }
