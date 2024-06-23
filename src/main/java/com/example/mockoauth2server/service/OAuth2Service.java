@@ -1,7 +1,7 @@
 package com.example.mockoauth2server.service;
 
-import com.example.mockoauth2server.config.CodeManager;
-import com.example.mockoauth2server.config.SecretValue;
+import com.example.mockoauth2server.global.CodeManager;
+import com.example.mockoauth2server.global.SecretValue;
 import com.example.mockoauth2server.service.dto.TokenResponse;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
