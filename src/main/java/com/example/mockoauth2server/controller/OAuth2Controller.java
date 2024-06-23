@@ -4,6 +4,7 @@ import com.example.mockoauth2server.service.OAuth2Service;
 import com.example.mockoauth2server.service.dto.TokenResponse;
 import com.example.mockoauth2server.service.dto.UserResponse;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.validation.constraints.NotBlank;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
@@ -18,11 +19,11 @@ public class OAuth2Controller {
 
     @GetMapping("/oauth2/authorize")
     public void authorize(
-            @RequestParam(value = "response_type") String response_type,
-            @RequestParam(value = "client_id") String client_id,
-            @RequestParam(value = "scope") String scope,
-            @RequestParam(value = "redirect_uri") String redirect_uri,
-            @RequestParam(value = "state") String state,
+            @RequestParam(value = "response_type") @NotBlank String response_type,
+            @RequestParam(value = "client_id") @NotBlank String client_id,
+            @RequestParam(value = "scope") @NotBlank String scope,
+            @RequestParam(value = "redirect_uri") @NotBlank String redirect_uri,
+            @RequestParam(value = "state") @NotBlank String state,
             HttpServletResponse response
     ) throws IOException {
         String authorizeCode = oAuth2Service.authorize(response_type, client_id, scope);
@@ -32,9 +33,9 @@ public class OAuth2Controller {
 
     @PostMapping("/oauth2/token")
     public TokenResponse token(
-            @RequestParam(value = "redirect_uri") String redirectUri,
-            @RequestParam(value = "code") String code,
-            @RequestParam(value = "grant_type") String grantType
+            @RequestParam(value = "redirect_uri") @NotBlank String redirectUri,
+            @RequestParam(value = "code") @NotBlank String code,
+            @RequestParam(value = "grant_type") @NotBlank String grantType
     ) {
         log.info("accessToken");
         return oAuth2Service.getToken(redirectUri, code, grantType);
@@ -42,7 +43,7 @@ public class OAuth2Controller {
 
     @GetMapping("/oauth2/userinfo")
     public UserResponse userinfo(
-            @RequestHeader(value = "Authorization") String authorization
+            @RequestHeader(value = "Authorization") @NotBlank String authorization
     ) {
         log.info("authorization: " + authorization);
 
