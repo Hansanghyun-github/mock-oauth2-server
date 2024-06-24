@@ -47,11 +47,6 @@ public class OAuth2Controller {
             @RequestHeader(value = "Authorization") @NotBlank String authorization
     ) {
         log.info("authorization: " + authorization);
-
-        authorization = authorization.replace("Bearer ", "");
-        if(!authorization.equals("access_token"))
-            throw new IllegalArgumentException("Invalid access_token");
-
-        return oAuth2Service.getUserInfo(authorization);
+        return oAuth2Service.getUserInfo(authorization.replace("Bearer ", ""));
     }
 }
