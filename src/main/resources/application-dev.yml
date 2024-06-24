@@ -1,0 +1,4 @@
+client-id: ${client-id}
+client-secret: ${client-secret}
+scope: ${scope}
+code: ${code}
