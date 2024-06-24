@@ -19,8 +19,6 @@ public class CodeManager {
         // validate s is numeric
         try {
             int l = Integer.parseInt(s);
-            if(l < 0 || l > 1000)
-                throw new IllegalArgumentException("Invalid code");
         } catch (NumberFormatException e) {
             throw new IllegalArgumentException("Invalid code");
         }
