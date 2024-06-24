@@ -40,6 +40,6 @@ public class OAuth2Service {
     public UserResponse getUserInfo(String authorization) {
         codeManager.validateCode(authorization);
         int number = codeManager.getNumber(authorization);
-        return new UserResponse("mock" + number + "@email", "mock_test_oauth2" + number, "sub");
+        return new UserResponse("mock" + number + "@email", "test_user" + number, "sub");
     }
 }
