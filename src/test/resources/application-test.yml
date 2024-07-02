@@ -2,3 +2,4 @@ client-id: test-id
 client-secret: test-secret
 scope: test-scope
 code: test-code
+temporary.auth.header: test-header
